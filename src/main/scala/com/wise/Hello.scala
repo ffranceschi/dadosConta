@@ -3,6 +3,7 @@ package com.wise
 
 object Hello extends App {
   // Factory method
-  val city = new HelloCity("a")
+  val city = HelloCity.apply("ab")
   city.sayHelloToCity
+
 }

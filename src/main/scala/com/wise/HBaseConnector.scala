@@ -19,7 +19,7 @@ object HBaseConnector {
   case class ContaTable(
                          name: String = "conta",
                          cfs: Map[String, Array[Byte]] = Map(
-                           ("cfConta", Bytes.toBytes("conta_data"))
+                           ("d", Bytes.toBytes("d"))
                          ),
                          columns: Map[String, Array[Byte]] = Map(
                            ("json", Bytes.toBytes("json"))
@@ -28,7 +28,6 @@ object HBaseConnector {
 
   val contaTable = ContaTable()
 
-  // Get table if exists, else create table
   def getOrCreateTable(table: TableProps): Table = {
     val tableName = TableName.valueOf(table.name)
     if (!admin.tableExists(tableName)) {
@@ -40,10 +39,9 @@ object HBaseConnector {
     connection.getTable(tableName)
   }
 
-  // Converting cache rdd row to Put object
   def convertToPutCache(key: String, value: String): Put = {
     val put = new Put(Bytes.toBytes(key))
-    put.addColumn(contaTable.cfs("cfConta"), contaTable.columns("json"), Bytes.toBytes(value))
+    put.addColumn(contaTable.cfs("d"), contaTable.columns("json"), Bytes.toBytes(value))
     put
   }
 

@@ -73,3 +73,19 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+.idea/.name
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/modules/
+.idea/sbt.xml
+.idea/scala_compiler.xml
+.idea/vcs.xml
+project/build.properties
+project/target/config-classes/$08b350772509585ef170.cache
+project/target/config-classes/$7bfa9e6fddb32af54440.cache
+project/target/config-classes/$db18a679d21eef3d4034.cache
+project/target/config-classes/$dd9c4fb294fdd2a3fb22.cache
+project/target/scala-2.12/
+project/target/streams/
+target/
